@@ -44,7 +44,7 @@ class BootstrapFormHelper extends FormHelper {
 			$options['format'] = array('before', 'input', 'between', 'label', 'error', 'after');
 		}
 
-		if (!empty($options['label'])) {
+		if ($options['label'] !== false) {
 			if (!is_array($options['label'])) {
 				$options['label'] = array('text' => $options['label']);
 			}
