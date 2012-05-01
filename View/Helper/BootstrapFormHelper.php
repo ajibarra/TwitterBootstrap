@@ -19,7 +19,7 @@ class BootstrapFormHelper extends FormHelper {
 			'type' => null,
 			'label' => null,
 			'before' => null, // to convert .input-prepend
-			'after' => null, // to convert .help-block
+			'after' => null,
 			'div' => array(),
 			'format' => array('before', 'label', 'between', 'input', 'error', 'after'),
 		);
@@ -186,10 +186,13 @@ class BootstrapFormHelper extends FormHelper {
 			'wrap' => 'p',
 			'class' => 'help-block',
 		);
-		$after += $afterDefault;
-		return $this->Html->tag($after['wrap'], $after['text'], array(
-			'class' => $after['class'],
-		));
+        $after += $afterDefault;
+        if ($after['wrap']) {
+            return $this->Html->tag($after['wrap'], $after['text'], array(
+                'class' => $after['class'],
+            ));
+        } else return $after['text'];
+
 	}
 
 	protected function _prepend($options) {
