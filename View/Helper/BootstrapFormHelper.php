@@ -99,7 +99,7 @@ class BootstrapFormHelper extends FormHelper {
 			'type' => 'submit',
 			'div' => array('class' => 'form-actions'),
 			'class' => 'btn btn-primary',
-			'data-loading-text' => __d('TwitterBootstrap', 'Submiting...'),
+			'data-loading-text' => __d('TwitterBootstrap', 'Submitting...'),
 		);
 		$options += $default;
 		$divOptions = $options['div'];
